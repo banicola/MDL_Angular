@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { first } from 'rxjs/operators';
+import { MatDialogRef } from '@angular/material/dialog';
 
 import { AlertService } from '../_services/alert.service';
 import { AuthenticationService } from '../_services/authentification.service';
@@ -14,6 +15,7 @@ export class LoginComponent implements OnInit {
     returnUrl: string;
 
     constructor(
+        public dialogRef: MatDialogRef<LoginComponent>,
         private formBuilder: FormBuilder,
         private route: ActivatedRoute,
         private router: Router,
@@ -61,5 +63,10 @@ export class LoginComponent implements OnInit {
                     this.alertService.error(error);
                     this.loading = false;
                 });
+    }
+    // If the user clicks the cancel button a.k.a. the go back button, then\
+    // just close the modal
+    closeModal() {
+        this.dialogRef.close();
     }
 }

@@ -1,39 +1,5 @@
-  <body onload="graphs();statistics()">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="index.html">
-    <img src="images/UMatters.png" width="30" height="30" class="d-inline-block align-top" alt="">
-    Panneau Administration
-    </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNavDropdown">
-    <ul class="navbar-nav">
-      <li class="nav-item active">
-        <a class="nav-link" href="">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Répondre aux propositions
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="reponse.html#Admin">Conseil d'administration</a>
-          <a class="dropdown-item" href="reponse.html#Fac">Facultaire</a>
-          <a class="dropdown-item" href="reponse.html#AGE">AGE</a>
-        </div>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link text-danger" href="signalements.html">Signalements</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link text-danger" href="utilisateurs.html">Utilisateurs bloqués</a>
-      </li>
-    </ul>
-    <ul class="navbar-nav ml-auto" style="margin:1em">
-        <a href="login.html" class="btn btn-primary">Login</a>
-    </ul>
-    </div>
-    </nav>
+<app-header-admin></app-header-admin>
+<body onload="graphs();statistics()">
     <div class="row justify-content-center" style="margin-top: 1rem;">
         <div class="col-sm-auto">
             <div class="card text-white bg-success mb-3" style="min-width: 18rem;max-width: 18rem;min-height: 12.5rem;max-height: 12.5rem;">
