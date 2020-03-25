@@ -4,8 +4,10 @@ import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule} from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
-import { MatButtonModule } from '@angular/material/button';
-import { MatDialogModule } from '@angular/material/dialog';
+//import { MatButtonModule } from '@angular/material/button';
+//import { MatDialogModule } from '@angular/material/dialog';
+//import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 import { LoginComponent as LoginComponent } from './login/login.component';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -15,7 +17,7 @@ import { HeaderComponent } from './header/header.component';
 import { HeaderAdminComponent } from './header-admin/header-admin.component';
 import { ReportComponent } from './report/report.component';
 import { UserBlockComponent } from './user-block/user-block.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -25,20 +27,18 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HeaderComponent,
     HeaderAdminComponent,
     ReportComponent,
-    UserBlockComponent
+    UserBlockComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule,
-    BrowserAnimationsModule,
-    MatButtonModule,
-    MatDialogModule
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent],
-  entryComponents:[LoginComponent]
+  entryComponents:[]
 })
 export class AppModule { }

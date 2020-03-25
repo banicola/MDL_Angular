@@ -5,7 +5,10 @@ import {LoginComponent} from './login/login.component';
 import {ReportComponent} from './report/report.component';
 import {UserBlockComponent} from './user-block/user-block.component';
 
+import {HomeComponent} from './home/home.component';
+
 const routes: Routes = [
+  {path : '', component : HomeComponent},
   {path : 'admin', component: AdministrationComponent},
   {path : 'login', component : LoginComponent},
   {path : 'report', component : ReportComponent},
