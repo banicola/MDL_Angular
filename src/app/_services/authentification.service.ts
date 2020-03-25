@@ -31,10 +31,15 @@ export class AuthentificationService {
     login(id, password) {
         return this.http.post<any>(`${environment.apiUrl}/users/connect`, { id, password })
             .pipe(map(user => {
-                // store user details and jwt token in local storage to keep user logged in between page refreshes
-                localStorage.setItem('currentUser', JSON.stringify(user));
-                this.currentUserSubject.next(user);
-                return user;
+                if(user.success){
+                    console.log(user);
+                    // store user details and jwt token in local storage to keep user logged in between page refreshes
+                    localStorage.setItem('currentUser', JSON.stringify({ id, password }));
+                    this.currentUserSubject.next(user);
+                    return user;
+                } else {
+                    return false;
+                }
             }));
     }
 
