@@ -1,0 +1,358 @@
+<app-header-admin></app-header-admin>
+<body>
+    <div class="row">
+        <!--Filtres-->
+        <div class="col-auto">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h5 class="card-title">Filtres :</h5>
+                    <div class="checkbox">
+                        <label><input type="checkbox" value=""> Box </label>
+                    </div>
+                    <div class="checkbox">
+                        <label><input type="checkbox" value=""> Commentaires </label>
+                    </div>
+                    <p></p>
+                    <h5 class="card-title">Trier :</h5>
+                    <div class="radio">
+                        <label><input type="radio" name="optradio" checked> Plus ancien</label>
+                    </div>
+                    <div class="radio">
+                        <label><input type="radio" name="optradio"> Plus récent</label>
+                    </div>
+                    <div class="radio">
+                        <label><input type="radio" name="optradio"> Utilisateur le plus signalé</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--Listes Boxes-->
+        <div class="col-8">
+
+            <div class="card border-dark mb-3">
+                <div class="card-body text-dark" id="card_1">
+                    <a href="#">
+                        <h5 class="card-title" id="report_title_1">[BOX] Interdire l'accès au bunker aux étudiants en
+                            droits</h5>
+                    </a>
+                    <h6 class="card-subtitle mb-2 text-muted">Signalement utilisateur le 03/02/2020</h6>
+                    <p class="card-text" id="report_reason_1"><b> Raison :</b> Discrimination</p>
+                    <p class="card-text" id="report_justification_1"><b> Justification :</b> Proposition discriminante
+                        envers les étudiants en droits.</p>
+                    <p class="card-text" id="report_profil_1"><b> Profil :</b> <a href='#profil'>Simon Mattens</a></p>
+                    <button type="button" id="report_btn_1" onclick="openModal(this)" class="btn btn-danger"
+                        value="1">Traiter le signalement</button>
+                    <button type="button" id="resume_btn_1" onclick="openModal2(this)" class="btn btn-info"
+                        value="1">Résumé de la box</button>
+                </div>
+            </div>
+
+            <div class="card border-dark mb-3">
+                <div class="card-body text-dark" id="card_2">
+                    <a href="#">
+                        <h5 class="card-title" id="report_title_2">[Commentaire] Interdire l'accès au bunker aux
+                            étudiants en droits</h5>
+                    </a>
+                    <h6 class="card-subtitle mb-2 text-muted">Signalement automatique le 03/02/2020</h6>
+                    <p class="card-text" id="report_reason_2"><b> Raison :</b> Insultes</p>
+                    <p class="card-text" id="report_justification_2"><b> Commentaire signalé :</b> Annule ta proposition
+                        connard</p>
+                    <p class="card-text" id="report_profil_2"><b> Profil :</b> <a href='#profil'>Thibaut Demain</a></p>
+                    <button type="button" id="report_btn_2" onclick="openModal(this)" class="btn btn-danger"
+                        value="2">Traiter le signalement</button>
+                    <button type="button" id="resume_btn_2" onclick="openModal2(this)" class="btn btn-info"
+                        value="2">Résumé de la box</button>
+                </div>
+            </div>
+
+            <div class="card border-dark mb-3">
+                <div class="card-body text-dark" id="card_3">
+                    <a href="#">
+                        <h5 class="card-title" id="report_title_3">[Commentaire] Changement local projet MDL</h5>
+                    </a>
+                    <h6 class="card-subtitle mb-2 text-muted">Signalement automatique le 05/02/2020</h6>
+                    <p class="card-text" id="report_reason_3"><b> Raison :</b> Spam</p>
+                    <p class="card-text" id="report_justification_3"><b> Commentaire signalé :</b> Gloire à info</p>
+                    <p class="card-text" id="report_spam_3"><b> Nombre de fois :</b> 5</p>
+                    <p class="card-text" id="report_profil_3"><b> Profil :</b> <a href='#profil'>Arthur Maquet</a></p>
+                    <button type="button" id="report_btn_3" onclick="openModal(this)" class="btn btn-danger"
+                        value="3">Traiter le signalement</button>
+                    <button type="button" id="resume_btn_3" onclick="openModal2(this)" class="btn btn-info"
+                        value="3">Résumé de la box</button>
+                </div>
+            </div>
+
+            <div class="card border-dark mb-3">
+                <div class="card-body text-dark" id="card_4">
+                    <a href="#">
+                        <h5 class="card-title" id="report_title_4">[BOX] Ouvrir une nouvelle sandwicherie à côté de la
+                            faculté info</h5>
+                    </a>
+                    <h6 class="card-subtitle mb-2 text-muted">Signalement utilisateur le 06/02/2020</h6>
+                    <p class="card-text" id="report_reason_4"><b> Raison :</b> Hors sujet</p>
+                    <p class="card-text" id="report_justification_4"><b> Justification :</b> Proposition ne dépendant
+                        pas de l'université</p>
+                    <p class="card-text" id="report_profil_4"><b> Profil :</b> <a href='#profil'>Juda Brico</a></p>
+                    <button type="button" id="report_btn_4" onclick="openModal(this)" class="btn btn-danger"
+                        value="4">Traiter le signalement</button>
+                    <button type="button" id="resume_btn_4" onclick="openModal2(this)" class="btn btn-info"
+                        value="4">Résumé de la box</button>
+                </div>
+            </div>
+
+            <div class="card border-dark mb-3">
+                <div class="card-body text-dark" id="card_5">
+                    <a href="#">
+                        <h5 class="card-title" id="report_title_5">[Commentaire] Problèmes de conflits horaires</h5>
+                    </a>
+                    <h6 class="card-subtitle mb-2 text-muted">Signalement utilisateur le 06/02/2020</h6>
+                    <p class="card-text" id="report_reason_5"><b> Raison :</b> Insultes</p>
+                    <p class="card-text" id="report_justification_5"><b> Commentaire signalé :</b> Pourquoi tout le
+                        temps vouloir changer les horaires, arrêter de faire chier...</p>
+                    <p class="card-text" id="report_profil_5"><b> Profil :</b> <a href='#profil'>Vincent Degrave</a></p>
+                    <button type="button" id="report_btn_5" onclick="openModal(this)" class="btn btn-danger"
+                        value="5">Traiter le signalement</button>
+                    <button type="button" id="resume_btn_5" onclick="openModal2(this)" class="btn btn-info"
+                        value="5">Résumé de la box</button>
+                </div>
+            </div>
+            <nav aria-label="Page navigation example">
+                <ul class="pagination">
+                    <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                    </li>
+                    <li class="page-item active"><a class="page-link" href="#1">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#2">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#3">3</a></li>
+                    <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modal_header_title">Modal Header</h3>
+            </div>
+            <div class="modal-body" id="modal_body_content">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" id="cancel">Annuler</button>
+                <button type="button" class="btn btn-danger" id="confirm">Confirmer</button>
+            </div>
+        </div>
+    </div>
+
+
+    <!--modal2 pour resumé box-->
+    <div id="myModal2" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modal2_header_title">Modal Header</h3>
+            </div>
+            <div class="modal-body" id="modal2_body_content">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" id="cancel2">Retour</button>
+            </div>
+        </div>
+    </div>
+</body>
+<script type="text/javascript">
+    // Get the modal
+    var modal = document.getElementById("myModal");
+
+    // Get the <span> element that closes the modal
+    var cancel = document.getElementById("cancel");
+
+    var confirm = document.getElementById("confirm");
+
+
+
+
+    // When the user clicks on the button, open the modal
+    function openModal(btn) {
+        document.getElementById("modal_header_title").innerHTML = document.getElementById("report_title_" + btn.value).textContent;
+
+        confirm.value = btn.value;
+
+        var modal_content = document.getElementById("modal_body_content");
+        var p_reason = document.createElement("p");
+        p_reason.innerHTML = document.getElementById("report_reason_" + btn.value).innerHTML;
+        modal_content.appendChild(p_reason);
+
+        var p_justif = document.createElement("p");
+        p_justif.innerHTML = document.getElementById("report_justification_" + btn.value).innerHTML;
+        modal_content.appendChild(p_justif);
+
+        if (document.body.contains(document.getElementById("report_spam_" + btn.value))) {
+            var p_spam = document.createElement("p");
+            p_spam.innerHTML = document.getElementById("report_spam_" + btn.value).innerHTML;
+            modal_content.appendChild(p_spam);
+        }
+
+        var p_profil = document.createElement("p");
+        p_profil.innerHTML = document.getElementById("report_profil_" + btn.value).innerHTML;
+        modal_content.appendChild(p_profil);
+
+        var div_alert = document.createElement("div");
+        div_alert.classList.add("alert");
+        div_alert.classList.add("alert-danger")
+        div_alert.innerHTML = "Cette utilisateur a déjà été signalé " + "5" + " fois et a été sanctionné " + "4" + " fois."; //Nombres à changer par appels BD
+        modal_content.appendChild(div_alert);
+
+        var no_sanction_button = document.createElement("button");
+        no_sanction_button.classList.add("btn");
+        no_sanction_button.classList.add("btn-success");
+        no_sanction_button.classList.add("active");
+        no_sanction_button.setAttribute("id", "no_sanction_btn");
+        no_sanction_button.setAttribute("onClick", "no_sanction()");
+        no_sanction_button.innerHTML = "Ne pas sanctionner";
+        modal_content.appendChild(no_sanction_button);
+
+        var sanction_button = document.createElement("button");
+        sanction_button.classList.add("btn");
+        sanction_button.classList.add("btn-danger");
+        sanction_button.setAttribute("id", "sanction_btn");
+        sanction_button.setAttribute("onClick", "sanction()");
+        sanction_button.innerHTML = "Sanctionner";
+        modal_content.appendChild(sanction_button);
+
+        var div_no_sanction_alert = document.createElement("div");
+        div_no_sanction_alert.classList.add("alert");
+        div_no_sanction_alert.classList.add("alert-success");
+        div_no_sanction_alert.setAttribute("id", "div_no_sanction_alert");
+        div_no_sanction_alert.innerHTML = "En cliquant sur confirmer l'utilisateur ne recevra aucune sanction."; //Nombres à changer par appels BD
+        modal_content.appendChild(div_no_sanction_alert);
+
+        modal.style.display = "block";
+    }
+
+    function sanction() {
+        if (!document.getElementById("modal_body_content").contains(document.getElementById("form_sanction"))) {
+            document.getElementById("sanction_btn").classList.add("active");
+            document.getElementById("no_sanction_btn").classList.remove("active");
+            document.getElementById("div_no_sanction_alert").style.display = "none";
+
+            var modal_content = document.getElementById("modal_body_content");
+            var form = document.createElement("form");
+            form.setAttribute("id", "form_sanction");
+            form.innerHTML = "<br><div class=\"form-check\"><input class=\"form-check-input\" type=\"checkbox\" value=\"\" id=\"delete_user_content\"><label class=\"form-check-label\" for=\"delete_user_content\">Supprimer le contenu signalé</label></div><br><div class=\"form-check\"><input class=\"form-check-input\" type=\"radio\" name=\"user_block_type\" id=\"def_user_block\" value=\"def\" checked onClick=\"sanction_type_check()\"><label class=\"form-check-label\" for=\"def_user_block\">Bloquer l'utilisateur définitivement</label></div><div class=\"form-check\"><input class=\"form-check-input\" type=\"radio\" name=\"user_block_type\" id=\"temp_user_block\" value=\"temp\" onClick=\"sanction_type_check()\"><label class=\"form-check-label\" for=\"temp_user_block\">Bloquer l'utilisateur temporairement</label></div><label class=\"mr-sm-2\" for=\"sanction_length_selection\">Durée</label><select class=\"custom-select mr-sm-2\" id=\"sanction_length_selection\" disabled><option selected>Sélectionnez la durée...</option><option value=\"1d\">1 jour</option><option value=\"3d\">3 jours</option><option value=\"1s\">1 semaine</option><option value=\"1m\">1 mois</option><option value=\"3m\">3 mois</option><option value=\"1a\">1 an</option></select><br><br><div class=\"form-group\"><label for=\"form_justification_sanction\">Justification sanction (Optionnel)</label><textarea class=\"form-control\" id=\"form_justification_sanction\" rows=\"3\"></textarea></div>";
+            modal_content.appendChild(form);
+        }
+    }
+
+    function no_sanction() {
+        if (document.getElementById("modal_body_content").contains(document.getElementById("form_sanction"))) {
+            document.getElementById("no_sanction_btn").classList.add("active");
+            document.getElementById("sanction_btn").classList.remove("active");
+            document.getElementById("div_no_sanction_alert").style.display = "block";
+            var modal_content = document.getElementById("modal_body_content");
+            modal_content.removeChild(document.getElementById("form_sanction"));
+        }
+    }
+    function sanction_type_check() {
+        if (document.getElementById("temp_user_block").checked) {
+            document.getElementById("sanction_length_selection").removeAttribute("disabled");
+        } else if (document.getElementById("def_user_block").checked) {
+            document.getElementById("sanction_length_selection").setAttribute("disabled", true);
+        }
+    }
+
+    // When the user clicks on <span> (x) or confirm, close the modal
+    cancel.onclick = function () {
+        document.getElementById("modal_body_content").innerHTML = "";
+        modal.style.display = "none";
+    }
+    confirm.onclick = function () {
+        document.getElementById("modal_body_content").innerHTML = "";
+        var button_signal = document.getElementById('report_btn_' + confirm.value);
+        button_signal.parentNode.removeChild(button_signal);
+
+        var div_alert = document.createElement("div");
+        div_alert.classList.add("alert");
+        div_alert.classList.add("alert-success");
+        div_alert.innerHTML = "<b>Signalement traité !</b>";
+        document.getElementById("card_" + confirm.value).appendChild(div_alert);
+
+        modal.style.display = "none";
+    }
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function (event) {
+        if (event.target == modal) {
+            document.getElementById("modal_body_content").innerHTML = "";
+            modal.style.display = "none";
+        }
+    }
+
+
+
+
+
+    //Modal2 pour les resumes de box
+    var modal2 = document.getElementById("myModal2");
+    function openModal2(btn2) {
+        document.getElementById("modal2_header_title").innerHTML = document.getElementById("report_title_" + btn2.value).textContent;
+
+        var modal2_content = document.getElementById("modal2_body_content");
+        var p_like = document.createElement("p");
+        p_like.innerHTML = "Nombre de likes :        200";
+        modal2_content.appendChild(p_like);
+        var p_comment = document.createElement("p");
+        p_comment.innerHTML = "Nombre de commentaires :        50";
+        modal2_content.appendChild(p_comment);
+
+        var sanction_button = document.createElement("button");
+        sanction_button.classList.add("btn");
+        sanction_button.classList.add("btn-info");
+        sanction_button.setAttribute("id", "info_btn");
+        sanction_button.setAttribute("onClick", "getBestComments()");
+        sanction_button.innerHTML = "Afficher les 3 meilleurs commentaires";
+        sanction_button.style.margin = "15px";
+        modal2_content.appendChild(sanction_button);
+
+        modal2.style.display = "block";
+
+    }
+
+    function getBestComments() {
+        if (!document.getElementById("modal2_body_content").contains(document.getElementById("form_info"))) {
+
+            var comment = ["First !! ", "Je suis d'accord avec mon compère", "Heuuu warzazat ?!"];
+
+            document.getElementById("info_btn").classList.add("active");
+            var modal_content = document.getElementById("modal2_body_content");
+            var form = document.createElement("div");
+            form.setAttribute("id", "form_info");
+            comment.forEach(e => {
+                var p = document.createElement("p");
+                p.innerHTML = "<p>" + e + "</p>";
+                p.classList.add("alert");
+                p.classList.add("alert-secondary");
+                form.appendChild(p);
+            });
+            modal_content.appendChild(form);
+        }
+
+    }
+    cancel2.onclick = function () {
+        document.getElementById("modal2_body_content").innerHTML = "";
+        modal2.style.display = "none";
+    }
+
+
+</script>

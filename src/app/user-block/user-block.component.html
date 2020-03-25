@@ -1,0 +1,210 @@
+<app-header-admin></app-header-admin>
+<body>
+    <!--Boxes des 3 dernières réponses-->
+    <div class="row">
+
+        <div class="col-auto">
+            <div class="card h-100">
+                <div class="card-body">
+
+                    <h5 class="card-title">Rechercher :</h5>
+                    <form class="form-inline">
+                        <input class="form-control mr-sm-2" type="search" placeholder="Nom utilisateur"
+                            aria-label="Search"><br>
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Rechercher</button>
+                    </form>
+                    <br>
+                    <h5 class="card-title">Trier :</h5>
+                    <div class="radio">
+                        <label><input type="radio" name="optradio" checked> Plus récent</label>
+                    </div>
+                    <div class="radio">
+                        <label><input type="radio" name="optradio"> Plus ancien</label>
+                    </div>
+                    <div class="radio">
+                        <label><input type="radio" name="optradio"> Utilisateur le plus signalé</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-7">
+            <div class="card border-dark mb-3">
+                <div class="card-body text-dark" id="card_1">
+                    <a href="#">
+                        <h5 class="card-title" id="report_user_1">Simon Mattens</h5>
+                    </a>
+                    <p>
+                        <font color="red"><strong>Sanctionné le 29/02/2020</strong></font>
+                    </p>
+                    <p class="card-text" id="report_reason_1"><b> Raison :</b> Discrimination</p>
+                    <p class="card-text" id="report_sanction_1"><b> Fin de la sanction :</b> samedi 21/03/2020</p>
+                    <button type="button" id="deblock_btn_1" class="btn btn-success" onclick="openModal(this)"
+                        value="1">Débloquer</button>
+                </div>
+            </div>
+
+            <div class="card border-dark mb-3">
+                <div class="card-body text-dark" id="card_2">
+                    <a href="#">
+                        <h5 class="card-title" id="report_user_2">Arthur Maquet</h5>
+                    </a>
+                    <p>
+                        <font color="red"><strong>Sanctionné le 29/02/2020</strong></font>
+                    </p>
+                    <p class="card-text" id="report_reason_2"><b> Raison :</b> Spam</p>
+                    <p class="card-text" id="report_sanction_2"><b> Fin de la sanction :</b> samedi 07/03/2020</p>
+                    <button type="button" id="deblock_btn_2" class="btn btn-success" onclick="openModal(this)"
+                        value="2">Débloquer</button>
+                </div>
+            </div>
+
+            <div class="card border-dark mb-3">
+                <div class="card-body text-dark" id="card_3">
+                    <a href="#">
+                        <h5 class="card-title" id="report_user_3">Thibaut Demain</h5>
+                    </a>
+                    <p>
+                        <font color="red"><strong>Sanctionné le 29/02/2020</strong></font>
+                    </p>
+                    <p class="card-text" id="report_reason_3"><b> Raison :</b> Insultes</p>
+                    <p class="card-text" id="report_sanction_3"><b> Fin de la sanction :</b> samedi 14/03/2020</p>
+                    <button type="button" id="deblock_btn_3" class="btn btn-success" onclick="openModal(this)"
+                        value="3">Débloquer</button>
+                </div>
+            </div>
+
+
+            <div class="card border-dark mb-3">
+                <div class="card-body text-dark" id="card_4">
+                    <a href="#">
+                        <h5 class="card-title" id="report_user_4">Juda Brico</h5>
+                    </a>
+                    <p>
+                        <font color="red"><strong>Sanctionné le 29/02/2020</strong></font>
+                    </p>
+                    <p class="card-text" id="report_reason_4"><b> Raison :</b> Hors sujet</p>
+                    <p class="card-text" id="report_sanction_4"><b> Fin de la sanction :</b> samedi 14/03/2020</p>
+                    <button type="button" id="deblock_btn_4" class="btn btn-success" onclick="openModal(this)"
+                        value="4">Débloquer</button>
+                </div>
+            </div>
+
+            <div class="card border-dark mb-3">
+                <div class="card-body text-dark" id="card_5">
+                    <a href="#">
+                        <h5 class="card-title" id="report_user_5">Vincent Degrave</h5>
+                    </a>
+                    <p>
+                        <font color="red"><strong>Sanctionné le 29/02/2020</strong></font>
+                    </p>
+                    <p class="card-text" id="report_reason_5"><b> Raison :</b> Insultes</p>
+                    <p class="card-text" id="report_sanction_5"><b> Fin de la sanction :</b> samedi 14/03/2020</p>
+                    <button type="button" id="deblock_btn_5" class="btn btn-success" onclick="openModal(this)"
+                        value="5">Débloquer</button>
+                </div>
+            </div>
+
+            <nav aria-label="Page navigation example">
+                <ul class="pagination">
+                    <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                    </li>
+                    <li class="page-item active"><a class="page-link" href="#1">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#2">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#3">3</a></li>
+                    <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+
+            <div id="myModal" class="modal">
+                <!-- Modal content -->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3 id="modal_header_title">Modal Header</h3>
+                    </div>
+                    <div class="modal-body" id="modal_body_content">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" id="cancel">Annuler</button>
+                        <button type="button" class="btn btn-success" id="confirm">Débloquer</button>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+
+</body>
+<script type="text/javascript">
+    // Get the modal
+    var modal = document.getElementById("myModal");
+
+    // Get the <span> element that closes the modal
+    var cancel = document.getElementById("cancel");
+
+    var confirm = document.getElementById("confirm");
+
+    // When the user clicks on the button, open the modal
+    function openModal(btn) {
+        document.getElementById("modal_header_title").innerHTML = document.getElementById("report_user_" + btn.value).textContent;
+
+        confirm.value = btn.value;
+
+        var modal_content = document.getElementById("modal_body_content");
+        var p_reason = document.createElement("p");
+        p_reason.innerHTML = document.getElementById("report_reason_" + btn.value).innerHTML;
+        modal_content.appendChild(p_reason);
+
+        var p_sanction = document.createElement("p");
+        p_sanction.innerHTML = document.getElementById("report_sanction_" + btn.value).innerHTML;
+        modal_content.appendChild(p_sanction);
+
+        var form = document.createElement("form");
+        form.setAttribute("id", "form_sanction");
+        form.innerHTML = "<div class=\"form-group\"><label for=\"form_justification_sanction\">Commentaire Déblocage :</label><textarea class=\"form-control\" id=\"form_justification_sanction\" rows=\"3\"></textarea></div>";
+        modal_content.appendChild(form);
+
+        modal.style.display = "block";
+    }
+
+    // When the user clicks on <span> (x) or confirm, close the modal
+    cancel.onclick = function () {
+        document.getElementById("modal_body_content").innerHTML = "";
+        modal.style.display = "none";
+    }
+    confirm.onclick = function () {
+        document.getElementById("modal_body_content").innerHTML = "";
+        var button_signal = document.getElementById('deblock_btn_' + confirm.value);
+        button_signal.parentNode.removeChild(button_signal);
+
+        var div_alert = document.createElement("div");
+        div_alert.classList.add("alert");
+        div_alert.classList.add("alert-success");
+        div_alert.innerHTML = "<b>Utilisateur débloqué !</b>";
+        document.getElementById("card_" + confirm.value).appendChild(div_alert);
+
+        modal.style.display = "none";
+    }
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function (event) {
+        if (event.target == modal) {
+            document.getElementById("modal_body_content").innerHTML = "";
+            modal.style.display = "none";
+        }
+    }
+</script>

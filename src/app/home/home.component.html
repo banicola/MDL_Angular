@@ -1,0 +1,154 @@
+<app-header></app-header>
+
+<!-- Page content -->
+<div class="row">
+
+    <!--Barre de gauche Filtre -->
+    <div class="col-auto">
+        <div class="card h-100">
+            <div class="card-body">
+                <h5 class="card-title">Filtres :</h5>
+                <div class="checkbox">
+                    <label><input type="checkbox" value=""> Validé </label>
+                </div>
+                <div class="checkbox">
+                    <label><input type="checkbox" value=""> Rejeté</label>
+                </div>
+                <div class="checkbox">
+                    <label><input type="checkbox" value=""> En suspend</label>
+                </div>
+                <div class="form-group">
+                    <label for="sel1"> Facultés :</label>
+                    <select class="form-control" id="sel1">
+                        <option> Informatique</option>
+                        <option> Médecine</option>
+                        <option> Sciences</option>
+                        <option> Droit</option>
+                    </select>
+                </div>
+                <div class="checkbox">
+                    <label><input type="checkbox" value=""> Conseil d'administration</label>
+                </div>
+                <div class="checkbox">
+                    <label><input type="checkbox" value=""> AGE</label>
+                </div>
+                <p></p>
+                <h5 class="card-title">Trier :</h5>
+                <div class="radio">
+                    <label><input type="radio" name="optradio" checked> Plus récent</label>
+                </div>
+                <div class="radio">
+                    <label><input type="radio" name="optradio"> Plus ancien</label>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Centre de la page-->
+    <div class="col-10">
+
+        <div class="card border-dark mb-3">
+            <div class="card-body text-dark">
+                <a href="#">
+                    <h5 class="card-title">Problèmes de conflits horaires</h5>
+                </a>
+                <h6 class="card-subtitle mb-2 text-muted">#Informatique #Horaire</h6>
+                <p>Publié le 22/02/2020 </p>
+                <b> Description :</b>
+                <p class="card-text">Nous sommes quelques étudiants en master informatique à rencontrer des soucis de
+                    conflits horaire, serait-il possible d'ajuster nos horaires ?</p>
+                <b> Réponse :</b>
+
+            </div>
+        </div>
+
+        <div class="card border-dark mb-3">
+            <div class="card-body text-dark">
+                <a href="#">
+                    <h5 class="card-title">Prix repas Arsenal trop cher pour étudiants</h5>
+                </a>
+                <h6 class="card-subtitle mb-2 text-muted">#Arsenal #Nourriture #Général </h6>
+                <p>Publié le 22/02/2020 </p>
+                <b> Description :</b>
+                <p class="card-text">Je trouve que les prix de l'arsenal de l'Unamur sont trop cher pour les étudiants
+                    surtout qu'on ne peut pas se resservir. Serait-il possible de revoir les prix à la baisse ? </p>
+                <b> Réponse :</b>
+            </div>
+        </div>
+
+        <div class="card border-dark mb-3">
+            <div class="card-body text-dark">
+                <a href="#">
+                    <h5 class="card-title">Création nouveau Kot à projet</h5>
+                </a>
+                <h6 class="card-subtitle mb-2 text-muted">#KAP #Environnement #Général</h6>
+                <p>
+                    <font><strong>Publié le 22/02/2020</strong></font>
+                </p>
+                <b> Description :</b>
+                <p class="card-text">J'ai eu l'idée avec certains compères de créer un nouveau projet dont le but serait
+                    de promouvoir des produits locaux, qu'en pensez-vous ?</p>
+                <b> Réponse :</b>
+
+            </div>
+        </div>
+
+        <div class="card border-dark mb-3">
+            <div class="card-body text-dark">
+                <a href="#">
+                    <h5 class="card-title">Changement local projet MDL</h5>
+                </a>
+                <h6 class="card-subtitle mb-2 text-muted">#Informatique #Local</h6>
+                <p>
+                    <font><strong>Publié le 22/02/2020</strong></font>
+                </p>
+                <b> Description :</b>
+                <p class="card-text">Mon groupe de MDL rencontre des problèmes suite au local qui nous a été attribué
+                    pour le projet de MDL, pouvons nous changer de local?</p>
+                <b> Réponse :</b>
+
+            </div>
+        </div>
+
+        <div class="card border-dark mb-3">
+            <div class="card-body text-dark">
+                <a href="#">
+                    <h5 class="card-title">Création d'un événement pour étudiant</h5>
+                </a>
+                <h6 class="card-subtitle mb-2 text-muted">#AGE #Event</h6>
+                <p>
+                    <font><strong>Publié le 22/02/2020</strong></font>
+                </p>
+                <b> Description :</b>
+                <p class="card-text">Nous avons créer l'événement "le bal des bières" qui était initialement prévu pour
+                    le mercredi 17/03/2020 mais suite à des désistements nous ne saurons pas assurer le bon
+                    fonctionnement de celui-ci pour cette date, est-ce possible de reporter l'event pour le mercredi
+                    suivant ?</p>
+                <b> Réponse :</b>
+
+            </div>
+        </div>
+
+        <nav aria-label="Page navigation example">
+            <ul class="pagination">
+                <li class="page-item">
+                    <a class="page-link" href="#" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                </li>
+                <li class="page-item active"><a class="page-link" href="#1">1</a></li>
+                <li class="page-item"><a class="page-link" href="#2">2</a></li>
+                <li class="page-item"><a class="page-link" href="#3">3</a></li>
+                <li class="page-item">
+                    <a class="page-link" href="#" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+    </div>
+
+</div>
