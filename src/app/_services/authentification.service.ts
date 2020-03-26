@@ -4,6 +4,8 @@ import { BehaviorSubject, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { environment } from '../../environments/environment';
 import { HttpHeaders } from '@angular/common/http';
+import * as jwt_decode from "jwt-decode";
+import {Router} from "@angular/router";
 
 import { User } from '../_models/user';
 
@@ -12,8 +14,8 @@ export class AuthentificationService {
     private currentUserSubject: BehaviorSubject<User>;
     public currentUser: Observable<User>;
 
-    constructor(private http: HttpClient) {
-        this.currentUserSubject = new BehaviorSubject<User>(JSON.parse(localStorage.getItem('currentUser')));
+    constructor(private http: HttpClient, private router:Router) {
+        this.currentUserSubject = new BehaviorSubject<User>(this.getDecodedAccessToken(localStorage.getItem('currentUser')));
         this.currentUser = this.currentUserSubject.asObservable();
     }
 
@@ -28,18 +30,21 @@ export class AuthentificationService {
         return this.currentUserSubject.value;
     }
 
+    isAuthenticated(){
+        if(this.currentUserValue){
+            return true;
+        } else {
+            return false;
+        }
+    }
+    
+
     login(id, password) {
         return this.http.post<any>(`${environment.apiUrl}/users/connect`, { id, password })
             .pipe(map(user => {
-                if(user.success){
-                    console.log(user);
-                    // store user details and jwt token in local storage to keep user logged in between page refreshes
-                    localStorage.setItem('currentUser', JSON.stringify({ id, password }));
-                    this.currentUserSubject.next(user);
-                    return user;
-                } else {
-                    return false;
-                }
+                localStorage.setItem('currentUser', user.message);
+                this.currentUserSubject.next(user);
+                return user;
             }));
     }
 
@@ -47,5 +52,15 @@ export class AuthentificationService {
         // remove user from local storage and set current user to null
         localStorage.removeItem('currentUser');
         this.currentUserSubject.next(null);
+        this.router.navigate(['/']);
     }
+
+    getDecodedAccessToken(token: string): any {
+        try{
+            return jwt_decode(token);
+        }
+        catch(Error){
+            return null;
+        }
+      }
 }

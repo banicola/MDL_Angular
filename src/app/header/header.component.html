@@ -26,11 +26,13 @@
                 </div>
             </li>
         </ul>
-
         <ul class="navbar-nav ml-auto" style="margin:1em">
-            <a [routerLink]="['/login']" class="btn btn-primary">Login</a>
+            <div *ngIf="isLoggedIn()==false; else account">
+                <a [routerLink]="['/login']" class="btn btn-primary">Login / Register</a>
+            </div>
+            <ng-template #account>
+                <a [routerLink]="['/login']" class="btn btn-danger" >Logout</a>
+            </ng-template>
         </ul>
     </div>
-
-
 </nav>

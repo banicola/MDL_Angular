@@ -7,9 +7,22 @@ import {UserBlockComponent} from './user-block/user-block.component';
 
 import {HomeComponent} from './home/home.component';
 
+import { 
+  AuthGuardService as AuthGuard 
+} from './_services/auth-guard/auth-guard.service';
+import { 
+  RoleGuardService as RoleGuard 
+} from './_services/auth-guard/role-guard.service';
+
 const routes: Routes = [
   {path : '', component : HomeComponent},
-  {path : 'admin', component: AdministrationComponent},
+  {path : 'admin', 
+  component: AdministrationComponent, 
+  canActivate: [AuthGuard]
+  /** 
+  data: { 
+    expectedRole: 'etudiant'
+  }*/  },
   {path : 'login', component : LoginComponent},
   {path : 'report', component : ReportComponent},
   {path : 'user-block', component : UserBlockComponent},

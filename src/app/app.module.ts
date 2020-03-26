@@ -19,6 +19,13 @@ import { ReportComponent } from './report/report.component';
 import { UserBlockComponent } from './user-block/user-block.component';
 import { HomeComponent } from './home/home.component';
 
+import { 
+  AuthGuardService 
+} from './_services/auth-guard/auth-guard.service';
+import { 
+  RoleGuardService 
+} from './_services/auth-guard/role-guard.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,7 +44,7 @@ import { HomeComponent } from './home/home.component';
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [RoleGuardService, AuthGuardService],
   bootstrap: [AppComponent],
   entryComponents:[]
 })

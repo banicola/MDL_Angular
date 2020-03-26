@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthentificationService } from '../_services/authentification.service';
 //import {MatDialog, MatDialogConfig} from '@angular/material/dialog'
 //import {LoginComponent} from '../login/login.component'
 
@@ -8,12 +9,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header-admin.component.css']
 })
 export class HeaderAdminComponent implements OnInit {
-
-  constructor() { }
+  isAuthenticated: boolean;
+  constructor(public authService: AuthentificationService) {
+  }
 
   ngOnInit(): void {
   }
 
+  isLoggedIn() {
+    this.isAuthenticated = this.authService.isAuthenticated();
+    return this.isAuthenticated;
+  }
  /* openModal(){
     public matDialog: MatDialog
     const dialogConfig = new MatDialogConfig();
