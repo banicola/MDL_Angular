@@ -39,8 +39,8 @@ export class AuthentificationService {
     }
     
 
-    login(id, password) {
-        return this.http.post<any>(`${environment.apiUrl}/users/connect`, { id, password })
+    login(email, password) {
+        return this.http.post<any>(`${environment.apiUrl}/users/connect`, { email, password })
             .pipe(map(user => {
                 localStorage.setItem('currentUser', user.message);
                 this.currentUserSubject.next(user);

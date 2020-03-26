@@ -24,8 +24,8 @@ const routes: Routes = [
     expectedRole: 'etudiant'
   }*/  },
   {path : 'login', component : LoginComponent},
-  {path : 'report', component : ReportComponent},
-  {path : 'user-block', component : UserBlockComponent},
+  {path : 'report', component : ReportComponent, canActivate: [AuthGuard]},
+  {path : 'user-block', component : UserBlockComponent, canActivate: [AuthGuard]},
 
   //Otherwise redirect to home
   {path: '**', redirectTo:''}

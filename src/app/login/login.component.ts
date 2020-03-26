@@ -4,7 +4,6 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { first } from 'rxjs/operators';
 //import { MatDialogRef } from '@angular/material/dialog';
 
-import { AlertService } from '../_services/alert.service';
 import { AuthentificationService } from '../_services/authentification.service';
 
 @Component({ templateUrl: 'login.component.html', styleUrls: ['login.component.css'] })
@@ -13,14 +12,14 @@ export class LoginComponent implements OnInit {
     loading = false;
     submitted = false;
     returnUrl: string;
+    alertMessage: string;
 
     constructor(
         //public dialogRef: MatDialogRef<LoginComponent>,
         private formBuilder: FormBuilder,
         private route: ActivatedRoute,
         private router: Router,
-        private authentificationService: AuthentificationService,
-        private alertService: AlertService
+        private authentificationService: AuthentificationService
     ) {
         // redirect to home if already logged in
         if (this.authentificationService.currentUserValue) {
@@ -45,15 +44,15 @@ export class LoginComponent implements OnInit {
     onSubmit() {
         this.submitted = true;
 
-        // reset alerts on submit
-        this.alertService.clear();
-
         // stop here if form is invalid
         if (this.loginForm.invalid) {
             return;
         }
 
         this.loading = true;
+
+        this.alertMessage = null;
+
         this.authentificationService.login(this.f.email.value, this.f.password.value)
             .pipe(first())
             .subscribe(
@@ -61,7 +60,7 @@ export class LoginComponent implements OnInit {
                     this.router.navigate([this.returnUrl]);
                 },
                 error => {
-                    this.alertService.error(error);
+                    this.alertMessage = error.status+" "+error.statusText+" - "+error.error.message;
                     this.loading = false;
                 });
     }
