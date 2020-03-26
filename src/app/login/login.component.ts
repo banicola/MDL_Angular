@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { first } from 'rxjs/operators';
+import * as bcrypt from 'bcryptjs';
 //import { MatDialogRef } from '@angular/material/dialog';
 
 import { AuthentificationService } from '../_services/authentification.service';
@@ -43,6 +44,7 @@ export class LoginComponent implements OnInit {
 
     onSubmit() {
         this.submitted = true;
+        const salt = bcrypt.genSaltSync(10);
 
         // stop here if form is invalid
         if (this.loginForm.invalid) {
@@ -52,8 +54,7 @@ export class LoginComponent implements OnInit {
         this.loading = true;
 
         this.alertMessage = null;
-
-        this.authentificationService.login(this.f.email.value, this.f.password.value)
+        this.authentificationService.login(this.f.email.value, bcrypt.hashSync(this.f.password.value, salt))
             .pipe(first())
             .subscribe(
                 data => {
