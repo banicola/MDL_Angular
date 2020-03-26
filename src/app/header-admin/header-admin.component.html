@@ -31,7 +31,16 @@
                 <a [routerLink]="['/login']" class="btn btn-primary">Login / Register</a>
             </div>
             <ng-template #account>
-                <a [routerLink]="['/login']" class="btn btn-danger" >Logout</a>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                        <b>{{getCurrentUser()}}</b>
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item text-danger" [routerLink]="['/login']">Logout</a>
+                    </div>
+                </li>
+                
             </ng-template>
         </ul>
     </div>
